@@ -1,0 +1,91 @@
+<! doctype html>
+<html>
+	<head>
+		<meta charset = "UTF-8" >
+		<meta name = "viewport" content = "width=device-width initial-scale=1.0">
+		<title>
+			ShaderLab Mitsunoryw
+		</title>
+	</head>
+	<style>
+		body{
+			background-color: rgb(35,35,35); margin: 0px;
+		}
+		.header-bar{
+			background-color: rgba(0,0,0,0.8); display: block; height: 50px; display: -webkit-flex;
+			display: flex;
+			justify-content: space-between;
+			position: sticky;
+			position: -webkit-sticky;
+			top: 0px;
+			z-index: 3;
+		}
+		.logo{
+			font-size: 30; color: rgb(255,255,255); font-weight: 200; padding: 15px 15px 0px 15px;
+		}
+		.button{
+			background-color: rgba(0,0,0,0.5);
+		}
+		.canvas{
+			padding: 10px; position: relative; 
+		}
+		textarea{
+			width: 100%; border: none; font-size: 20;
+		}
+		button {
+			border: none; font-size: 20; color: rgb(120,120,120); padding: 20px 15px 0px 15px; background-color: rgba(0,0,0,0.8); display: block; margin = 0;
+		}
+		#on_canvas{
+			color: rgb(255,255,255); z-index: 2; position: absolute; bottom: 20px; padding: 0px 10px 10px 10px; word-wrap:break-word; word-break:break-all;
+		}
+		.mainCanvas{
+			z-index: 1; width: 100%;
+		}
+		#codeArea{
+			display: block; padding: 10px 0px 10px 0px;
+		}
+		#bottomButton{
+			position: sticky; position: -webkit-sticky; bottom: 0px; margin-top: 10px;
+		}
+		@media screen and (orientation: landscape){
+			body{
+			}
+			.content{
+				display: flex;
+				display: -webkit-flex;
+				align-items: stretch;
+			}
+		}
+	</style>
+	<body onload = "initGl();">
+		<div class = "header-bar">
+			<div class = "logo">
+				Shader Lab
+			</div>
+			<div class = "button">
+				<button id = "menuBitton">
+				MENU
+				</button>
+			</div>
+		</div>
+		<div class = "content">
+			<div class = "canvas">
+				<div id = "on_canvas">
+					on_canvas
+				</div>
+				<canvas id = "mainCanvas"></canvas>
+			</div>
+			<div id = "codeArea">
+				<div id = "textArea">
+					<textarea id = "shaderSource" placeholder = "put your shader code here" ></textarea>
+				</div>
+				<div class = "button" id = "bottomButton">
+					<button id = "tryButton" onclick = "start();">
+					Run
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src = "shaderLab.js"></script>
+	</body>
+</html>
